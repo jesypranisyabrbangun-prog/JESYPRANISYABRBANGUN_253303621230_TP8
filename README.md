@@ -67,7 +67,7 @@ Fitur ini dibuat untuk memudahkan pengguna mengetahui karakter dengan level tert
 Method `findStrongest()` tidak mengembalikan objek koleksi internal `ArrayList`. Method hanya mengembalikan objek `Character` yang memiliki level tertinggi. Dengan demikian, struktur daftar karakter tetap dikelola oleh `CharacterManager`.
 
 ### 6. Dokumentasi Javadoc
-
+s
 Method `findStrongest()` dilengkapi dokumentasi Javadoc yang menjelaskan fungsi method dan nilai yang dikembalikan. Jika daftar karakter kosong, method mengembalikan `null`.
 
 ### 7. Kompleksitas
@@ -118,3 +118,72 @@ Sebelum penambahan karakter, aplikasi menampilkan tiga karakter dengan rata-rata
 
 ### 5. Analisis GUI dan MVC
 [Google Docs — Analisis Desain dan Ekosistem Java](https://docs.google.com/document/d/1ZTkId9hr_S5cxrdCIq3WxPFXBGRw4CD4WTnswI29dlI/edit?usp=sharing)
+
+
+
+## TP10 — AppTheme dan MainWindow v0.4
+
+### 1. Implementasi AppTheme
+
+Pada TP10, aplikasi Character Manager dikembangkan menggunakan
+AppTheme untuk mengatur warna, font, dan border tampilan.
+Pengaturan tema dipisahkan dari MainWindow agar tampilan
+aplikasi lebih terstruktur dan mudah diperbarui.
+
+### 2. Screenshot Sebelum dan Sesudah
+
+**Sebelum perubahan (v0.3)**
+
+![Screenshot Character Manager v0.3](docs/screenshot-v03.png)
+
+**Sesudah perubahan (v0.4)**
+
+![Screenshot Character Manager v0.4](docs/screenshot-v04.png)
+
+### 3. Penerapan Mini-Challenge
+
+Karakter dengan level 5 atau lebih ditampilkan menggunakan
+teks berwarna emas dan font tebal. Batas level disimpan
+dalam konstanta GOLD_LEVEL_THRESHOLD dengan nilai 5.
+Dengan cara ini, perubahan batas level dapat dilakukan
+dengan mudah tanpa mengubah banyak bagian kode.
+
+### 4. Pemisahan AppTheme dan Model
+
+Warna disimpan di AppTheme karena warna merupakan bagian
+dari tampilan aplikasi. Character sebagai Model hanya
+bertanggung jawab menyimpan data karakter seperti nama,
+role, level, HP, dan ATK. Dengan pemisahan ini, perubahan
+desain tidak mengharuskan perubahan pada class Character.
+Selain itu, pemisahan tersebut membuat program lebih
+mudah dirawat dan sesuai dengan konsep MVC.
+
+### 5. Dua Properti Tambahan
+
+**a. Tooltip HP dan ATK**
+
+Tooltip digunakan untuk menampilkan informasi nama,
+HP, dan ATK ketika pengguna mengarahkan kursor ke kartu
+karakter. Fitur ini membantu pengguna melihat informasi
+tambahan tanpa memenuhi tampilan utama.
+
+**b. Status Enabled pada Kartu Karakter**
+
+Kartu karakter dengan level 1 diberikan status
+setEnabled(false). Properti ini menandai komponen
+sebagai nonaktif sehingga dapat digunakan sebagai
+dasar pengaturan interaksi pada pengembangan berikutnya.
+
+### 6. Hasil Pengujian
+
+Aplikasi berhasil menampilkan enam karakter dengan
+variasi role dan level. Warna kartu mengikuti role
+masing-masing karakter. Karakter dengan level 5 atau
+lebih memiliki teks berwarna emas dan tebal.
+Statistik rata-rata level juga berhasil ditampilkan.
+
+### 7. Analisis Bagian D
+
+Dokumen analisis properti Swing dan konsep MVC:
+
+[Google Docs — Analisis TP10](https://docs.google.com/document/d/1ZTkId9hr_S5cxrdCIq3WxPFXBGRw4CD4WTnswI29dlI/edit?usp=sharing)
